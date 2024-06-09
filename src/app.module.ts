@@ -1,14 +1,14 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { CatsController } from './modules/cats/cats.controller';
 import { APP_INTERCEPTOR } from '@nestjs/core';
 import { ResponseInterceptor } from './modules/interceptors/response.interceptor';
 import { LoggingInterceptor } from './modules/interceptors/logging.interceptor';
+import { CatsModule } from './modules/cats/cats.module';
 
 @Module({
-  imports: [],
-  controllers: [AppController, CatsController],
+  imports: [CatsModule],
+  controllers: [AppController],
   providers: [
     AppService,
     {
