@@ -24,24 +24,23 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+这是一个NestJS的学习项目，将会持续更新相关知识点
 
-## Installation
+## 安装依赖
 
 ```bash
 $ pnpm install
 ```
 
-## Running the app
-
+## 运行项目
 ```bash
-# development
+# 开发模式运行
 $ pnpm run start
 
-# watch mode
+# 建议使用监视模式，有更改的话项目会进行数据更新
 $ pnpm run start:dev
 
-# production mode
+# 生产环境
 $ pnpm run start:prod
 ```
 
