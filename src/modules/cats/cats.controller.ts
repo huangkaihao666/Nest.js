@@ -9,25 +9,33 @@ import {
   // HttpStatus,
   // Res,
   // Query,
+  // HttpException,
+  // UseFilters,
 } from '@nestjs/common';
 import { CreateCatDto } from './dto/create-cat.dto';
+// import { ForbiddenException } from '../../common/exception/forbidden.exception'; //自定义异常
 // import { CreateCatDto, UpdateCatDto } from './create-cat.dto';
 // import { Response } from 'express';
 // import { v4 as uuidv4 } from 'uuid';
 import { CatsService } from './services/cats.service';
 import { Cat } from './interfaces/cat.interface';
+// import { HttpExceptionFilter } from '../../common/filters/http-exception.filter';//异常过滤器
 
 @Controller('cats')
 export class CatsController {
   constructor(private catsService: CatsService) {}
 
   @Post()
+  // @UseFilters(HttpExceptionFilter)
   async create(@Body() createCatDto: CreateCatDto) {
+    // throw new ForbiddenException('You are not allowed to create'); //自定义异常
+    // throw new HttpException('Forbidden', HttpStatus.FORBIDDEN); // 基础异常类
     this.catsService.create(createCatDto);
   }
 
   @Get()
   async findAll(): Promise<Cat[]> {
+    // throw new ForbiddenException('this is not allowed');
     return this.catsService.findAll();
   }
 }
