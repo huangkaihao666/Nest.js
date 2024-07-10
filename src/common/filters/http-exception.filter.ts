@@ -1,5 +1,5 @@
 //  http-exception.filter.ts
-
+// 过滤器统一异常的格式处理
 import {
   ExceptionFilter,
   Catch,
@@ -20,6 +20,7 @@ export class HttpExceptionFilter implements ExceptionFilter {
       statusCode: status,
       timestamp: new Date().toISOString(),
       path: request.url,
+      success: false,
     });
   }
 }

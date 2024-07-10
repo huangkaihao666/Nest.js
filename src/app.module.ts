@@ -1,9 +1,9 @@
 import { Module, NestModule, MiddlewareConsumer } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { APP_INTERCEPTOR } from '@nestjs/core';
-import { ResponseInterceptor } from './modules/interceptors/response.interceptor';
-import { LoggingInterceptor } from './modules/interceptors/logging.interceptor';
+// import { APP_INTERCEPTOR } from '@nestjs/core';
+// import { ResponseInterceptor } from './modules/interceptors/response.interceptor';
+// import { LoggingInterceptor } from './modules/interceptors/logging.interceptor';
 import { CatsModule } from './modules/cats/cats.module';
 import { LoggerMiddleware } from './common/middleware/logger.middleware';
 // import { HttpExceptionFilter } from './common/filters/http-exception.filter';
@@ -13,14 +13,14 @@ import { LoggerMiddleware } from './common/middleware/logger.middleware';
   controllers: [AppController],
   providers: [
     AppService,
-    {
-      provide: APP_INTERCEPTOR,
-      useClass: ResponseInterceptor,
-    },
-    {
-      provide: APP_INTERCEPTOR,
-      useClass: LoggingInterceptor,
-    },
+    // {
+    //   provide: APP_INTERCEPTOR,
+    //   useClass: ResponseInterceptor,
+    // },
+    // {
+    //   provide: APP_INTERCEPTOR,
+    //   useClass: LoggingInterceptor,
+    // },
     // {
     //   provide: APP_FILTER,
     //   useClass: HttpExceptionFilter,
