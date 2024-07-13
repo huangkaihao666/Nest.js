@@ -1,5 +1,6 @@
 {
   "aide.convertLanguagePairs": {
     "typescript": "python"
-  }
+  },
+  "files.eol": "\n"
 }

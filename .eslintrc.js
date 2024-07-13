@@ -21,5 +21,7 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
+    'prettier/prettier': ['error', { endOfLine: 'auto' }], // 解决使用 ESLint 和 Prettier 进行代码格式化时，主要是由于行尾结束符（Line Ending）的不一致造成的报错提示。
+    //␍（回车符）通常代表 Windows 风格的行尾（CRLF），而 Unix/Linux 系统使用 LF
   },
 };

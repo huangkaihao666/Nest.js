@@ -7,9 +7,10 @@ import { AppService } from './app.service';
 import { CatsModule } from './modules/cats/cats.module';
 import { LoggerMiddleware } from './common/middleware/logger.middleware';
 // import { HttpExceptionFilter } from './common/filters/http-exception.filter';
+import { GuardModule } from './guard/guard.module';
 
 @Module({
-  imports: [CatsModule],
+  imports: [CatsModule, GuardModule],
   controllers: [AppController],
   providers: [
     AppService,
