@@ -7,12 +7,13 @@ import {
   Param,
   Delete,
   UseGuards,
-  SetMetadata,
+  // SetMetadata,
 } from '@nestjs/common';
 import { GuardService } from './guard.service';
 import { CreateGuardDto } from './dto/create-guard.dto';
 import { UpdateGuardDto } from './dto/update-guard.dto';
 import { GuardGuard } from './guard.guard';
+import { Role, ReqUrl } from './role.decorator';
 
 @Controller('guard')
 @UseGuards(GuardGuard) //使用守卫
@@ -25,8 +26,9 @@ export class GuardController {
   }
 
   @Get()
-  @SetMetadata('role', ['admin'])
-  findAll() {
+  @Role(['admin'])
+  findAll(@ReqUrl('abc') url: string) {
+    console.log('url', url);
     return this.guardService.findAll();
   }
 
