@@ -11,8 +11,10 @@ import { CreateCatDto } from './dto/create-cat.dto';
 import { CatsService } from './services/cats.service';
 import { Cat } from './interfaces/cat.interface';
 import { ValidationPipe } from '../../common/pipes/validate.pipe';
+import { ApiTags } from '@nestjs/swagger';
 
 @Controller('cats')
+@ApiTags('这是cats相关的API')
 export class CatsController {
   constructor(private catsService: CatsService) {}
 
